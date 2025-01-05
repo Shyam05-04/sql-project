@@ -1,3 +1,5 @@
+---using DDL commands---
+
 create database sports;
 use sports;
 
@@ -37,6 +39,8 @@ league_id int primary key auto_increment,
 league_name varchar(100)
 );
 
+---using DML commands---
+
 insert into cricket(team_name,league_id) values
 ('india',1),('west indies',2),('australia',3),('england',2),('srilanka',1);
 
@@ -59,6 +63,7 @@ insert into scores (match_id,team_score,team_num) values
 insert into leagues (league_name) values
 ('world cup'),('ipl'),('test match'),('T20');
 
+---using DDL and DML COMMANDS---
 select * from cricket where team_id='3';
 alter table cricket add column native varchar(100);
 alter table cricket drop column native;
@@ -69,6 +74,8 @@ where team_id ='2';
 update players
 set roles='all rounder'
 where player_num=2;
+
+---using aggregate functions---
 
 select* from coaches
 order by join_date;
@@ -81,6 +88,8 @@ select distinct team_id
 from coaches
 order by team_id;
 
+---using join functions---
+
 select p.player_name
 from players p
 left join scores s on match_id=s.match_id;
@@ -89,9 +98,6 @@ select p.player_name
 from players p
 right join scores s on match_id=s.match_id;
 
-select match_id,team_score
-from scores  
-inner join team_name,team_id;
 
 
 
