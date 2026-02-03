@@ -1,5 +1,4 @@
 ---using DDL commands---
-
 create database sports;
 use sports;
 
